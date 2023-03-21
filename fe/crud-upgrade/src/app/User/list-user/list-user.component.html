@@ -1,0 +1,116 @@
+<!-- <div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <input [(ngModel)]="searchText" type="search" class="form-control" placeholder="Search"
+                style="margin: 10px auto; width: 50%;">
+            <div class="table-title">
+            
+                <div class="row">
+                    <div class="col-sm-4">
+                        <button (click)="add()" class="btn btn-danger">Create User</button>
+                    </div>
+                    <div class="col-sm-4">
+                        <h2 class="text-center">Customer <b>Details</b></h2>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name <i class="fa fa-sort"></i></th>
+                        <th>Email</th>
+                        <th>PassWord <i class="fa fa-sort"></i></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of user | studentFilterPipe:searchText">
+
+                        <td>{{user.id}}</td>
+                        <td>{{user.name}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.password}}</td>
+                        <td>
+                            <a (click)="updatePersonal(user)" class="edit" title="Edit" data-toggle="tooltip"><i
+                                    class="material-icons">&#xE254;</i></a>
+                            <a (click)="deletePersonal(user)" class="delete" title="Delete" data-toggle="tooltip"><i
+                                    class="material-icons">&#xE872;</i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div> -->
+
+<!-- <div class="container-fluid">
+
+    <input [(ngModel)]="searchText" type="search" class="form-control" placeholder="Search"
+        style="margin: 10px auto; width: 50%;">
+
+    <table class="table table-light" style="margin: 10px auto; text-align: center;">
+        <thead class="thead-light">
+            <tr>
+                <th>Id</th>
+                <th>name</th>
+                <th>quantity</th>
+                <th>sectors</th>
+                <th>maSp</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of product | studentFilterPipe:searchText">
+                <td>{{product.id}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.quantity}}</td>
+                <td>{{product.sectors}}</td>
+                <td>{{product.maSp}}</td>
+
+                <td>
+                    <button class="btn btn-warning" style="margin-right: 5px;"
+                        (click)="updateUser(product)">Edit</button>
+                    <button class="btn btn-danger" (click)="deleteUser(product)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->
+
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1>List Product</h1>
+        </div>
+        <div class="card-body">
+            <input [(ngModel)]="searchText" type="search" class="form-control" placeholder="Search"
+                style="margin: 10px auto; width: 50%;">
+            <table class="table table-hover">
+                <thead>
+                    <tr class="text-center">
+                        <th>Id</th>
+                        <th (click)="sortName()">name</th>
+                        <th (click)="sortQuantity()">quantity</th>
+                        <th>sectors</th>
+                        <th>maSp</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of product | studentFilterPipe:searchText">
+                        <td>{{product.id}}</td>
+                        <td>{{product.name}}</td>
+                        <td>{{product.quantity}}</td>
+                        <td>{{product.sectors}}</td>
+                        <td>{{product.maSp}}</td>
+
+                        <td>
+                            <button (click)="updateUser(product)" class="btn btn-warning">Edit</button>
+                            <button (click)="deleteUser(product)" class="btn btn-danger">Delete</button>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
